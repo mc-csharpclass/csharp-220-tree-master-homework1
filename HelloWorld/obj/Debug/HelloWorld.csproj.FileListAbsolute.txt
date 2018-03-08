@@ -15,3 +15,5 @@ C:\Users\Mike\source\repos\HelloWorld\obj\Debug\HelloWorld.exe
 C:\Users\Mike\source\repos\HelloWorld\obj\Debug\HelloWorld.pdb
 C:\Users\Mike\source\repos\HelloWorld\obj\Debug\PanelWindow.g.cs
 C:\Users\Mike\source\repos\HelloWorld\obj\Debug\PanelWindow.baml
+C:\Users\Mike\source\repos\HelloWorld\obj\Debug\SecondWindow.g.cs
+C:\Users\Mike\source\repos\HelloWorld\obj\Debug\SecondWindow.baml

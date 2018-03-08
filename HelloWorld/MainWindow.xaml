@@ -12,8 +12,7 @@
             <TextBlock>Enter Name:</TextBlock>
 
             <TextBox x:Name="uxName" 
-        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="uxName_TextChanged_1">
-            </TextBox>
+        Text="{Binding Name, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}" TextChanged="TextChanged"/>
 
             <Label x:Name="uxNameError" 
         Content="{Binding NameError, UpdateSourceTrigger=PropertyChanged}"></Label>
@@ -21,8 +20,8 @@
            
         <TextBlock>Enter Password:</TextBlock>
         
-        <TextBox x:Name="uxPassword" TextInput="uxPassword_TextInput" TextChanged="uxPassword_TextChanged"></TextBox>
-        <Button x:Name="uxSubmit" Click="uxSubmit_Click" IsEnabled="False">Submit</Button>
+        <TextBox x:Name="uxPassword" TextChanged="TextChanged"/>
+        <Button x:Name="uxSubmit" Click="uxSubmit_Click" IsEnabled="False" >Submit</Button>
         <Button Height="103">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Height="139">
                 <Image Source="images/ic_thumb_up_black_24dp_2x.png" HorizontalAlignment="Left" VerticalAlignment="Bottom" />
