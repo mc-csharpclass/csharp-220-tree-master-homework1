@@ -1,0 +1,95 @@
+﻿<Window x:Class="GamesListApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GamesListApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" >
+    <StackPanel Orientation="Vertical">
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem x:Name="uxFileNew" Header="_New" Click="uxFileNew_Click" />
+                <MenuItem x:Name="uxFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded" />
+                <MenuItem x:Name="uxRefresh" Header="Refresh" Click="uxRefresh_Click"/>
+                <MenuItem x:Name="uxFileClose" Header="_Close" Click="uxFileClose_Click" />
+            </MenuItem>
+            
+        </Menu>
+        <ListView x:Name="uxGameList" Height="200" SelectionChanged="uxGameList_SelectionChanged" MouseDoubleClick="uxFileChange_DoubleClick">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="uxContextFileNew" Header="_New" Click="uxFileNew_Click"/>
+                    <MenuItem x:Name="uxContextFileChange" Header="_Modify" Click="uxFileChange_Click" Loaded="uxFileChange_Loaded"/>
+                    <MenuItem x:Name="uxContextFileDelete" Header="_Delete" Click="uxFileDelete_Click" Loaded="uxFileDelete_Loaded"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Id}"  Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="Id" Click="uxColumnHeader_Click">ID</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GameName}" Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="GameName" Click="uxColumnHeader_Click">Name</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GameLanguage}" Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="GameLanguage" Click="uxColumnHeader_Click">Language</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GameSystem}" Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="GameSystem" Click="uxColumnHeader_Click">System</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GamePrice}" Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="GamePrice" Click="uxColumnHeader_Click">Price</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GameScore}" Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="GameScore" Click="uxColumnHeader_Click">Score</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding GameAddedDate}" Width="100" >
+                        <GridViewColumn.Header>
+                            <GridViewColumnHeader Tag="GameAddedDate" Click="uxColumnHeader_Click">Added Date</GridViewColumnHeader>
+                        </GridViewColumn.Header>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBlock x:Name="uxInstructions">Use the box below to search a game to edit or delete:</TextBlock>
+        <Grid x:Name="uxEditGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" MinWidth="83" />
+                <ColumnDefinition Width="auto" MinWidth="135" />
+                <ColumnDefinition Width="auto" MinWidth="97" />
+                <ColumnDefinition Width="auto" MinWidth="416" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Width="63">ID Number:</TextBlock>
+            <TextBox x:Name="uxIDNumber" Grid.Column="1" Grid.Row="1" TextChanged="enableClick"/>
+            <Button x:Name="uxIDEdit"  Grid.Row="1" Grid.Column="2" MinWidth="10" HorizontalAlignment="Left" Click="uxIDEdit_Click" Margin="36,10,0,10" Width="24">Edit</Button>
+            <Button x:Name="uxIDDelte"  Grid.Row="1" Grid.Column="3" MinWidth="10" HorizontalAlignment="Left" Click="uxIDDelete_Click" Margin="36,10,0,10" Width="59">Delete</Button>
+        </Grid>
+    </StackPanel>
+</Window>
